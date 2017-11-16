@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import argparse
 import os
 import numpy as np
@@ -34,11 +35,11 @@ def predict(model_data_path, image_path):
         print('Loading the model')
 
         # Use to load from ckpt file
-        saver = tf.train.Saver()     
-        saver.restore(sess, model_data_path)
+        #saver = tf.train.Saver()     
+        #saver.restore(sess, model_data_path)
 
         # Use to load from npy file
-        #net.load(model_data_path, sess) 
+        net.load(model_data_path, sess) 
 
         # Evalute the network for the given image
         pred = sess.run(net.get_output(), feed_dict={input_node: img})
