@@ -20,6 +20,11 @@ This repository contains the CNN models trained for depth prediction from a sing
 
 The trained models are currently provided in two frameworks, MatConvNet and TensorFlow. Please read below for more information on how to get started.
 
+### TensorFlow
+The code provided in the *tensorflow* folder requires accordingly a successful installation of the [TensorFlow](https://www.tensorflow.org/) library (any platform). 
+The model's graph is constructed in ```fcrn.py``` and the corresponding weights can be downloaded using the link below. The implementation is based on [ethereon's](https://github.com/ethereon/caffe-tensorflow) Caffe-to-TensorFlow conversion tool. 
+```predict.py``` provides sample code for using the network to predict the depth map of an input image. Use ```python predict.py NYU_FCRN.ckpt yourimage.jpg``` to try the code.
+
 ### MatConvNet
 
 **Prerequisites**
@@ -49,6 +54,8 @@ The trained models - namely **ResNet-UpProj** in the paper - can also be downloa
 
 
 ## Results
+
+**NEW!** The predictions for the validation set of NYU-Depth-v2 dataset can also be downloaded [here](http://campar.in.tum.de/files/rupprecht/depthpred/predictions_NYUval.mat) (.mat). 
 
 In the following tables, we report the results that should be obtained after evaluation and also compare to other (most recent) methods on depth prediction from a single image. 
 - Error metrics on NYU Depth v2:
